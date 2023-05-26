@@ -23,12 +23,9 @@ public class Pin : MonoBehaviour
         if (col.tag == "Rotator")
         {
             transform.SetParent(col.transform);
-            Score.PinCount++;
+            Score.IncreasePinCount();
             // for rotating fast after each pin attached
-            // col.GetComponent<Rotator>().speed += 50f;
-
-            // for for rotating in oppose direction after each pin
-            // col.GetComponent<Rotator>().speed += 50f;
+            col.GetComponent<Rotator>().speed *= .999f;
             isPinned = true;
         }
         else if (col.tag == "Pin")

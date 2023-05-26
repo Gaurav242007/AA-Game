@@ -250,3 +250,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   rb: {fileID: 7440944030387256524}
+  Score: {fileID: 7440944030387256560}
