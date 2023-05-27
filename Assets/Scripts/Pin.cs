@@ -7,7 +7,6 @@ public class Pin : MonoBehaviour
     private bool isPinned = false;
     public float speed = 20f;
     public Rigidbody2D rb;
-
     void Update()
     {
         if (!isPinned)
@@ -24,8 +23,6 @@ public class Pin : MonoBehaviour
         {
             transform.SetParent(col.transform);
             Score.IncreasePinCount();
-            // for rotating fast after each pin attached
-            col.GetComponent<Rotator>().speed *= .999f;
             isPinned = true;
         }
         else if (col.tag == "Pin")

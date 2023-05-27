@@ -12,17 +12,22 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public Animator animator;
     public string NextLevelScene;
+    public GameObject LevelWonUi;
 
     void Start()
     {
         FindObjectOfType<AudioController>().GetComponent<AudioController>().PlayBGMusic();
         hasLevelCompleted = false;
+        LevelWonUi.SetActive(false);
     }
 
     void Update()
     {
         if (hasLevelCompleted)
+        {
+            Debug.Log("Completed Level");
             LevelComplete();
+        }
     }
 
     public void EndGame()
@@ -41,9 +46,16 @@ public class GameManager : MonoBehaviour
 
     public void LevelComplete()
     {
+        rotator.enabled = false;
+        spawner.enabled = false;
+        FindObjectOfType<AudioController>().GetComponent<AudioController>().StopBgMusic();
         FindObjectOfType<AudioController>().GetComponent<AudioController>().PlayWinSfx();
-        animator.SetTrigger("LevelComplete");
-        LoadNextLevel();
+        animator.SetTrigger("LevelWin");
+    }
+
+    public void AnimateLevelWin()
+    {
+        LevelWonUi.SetActive(true);
     }
 
     public void LoadNextLevel()

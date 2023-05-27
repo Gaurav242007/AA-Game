@@ -147,7 +147,7 @@ GameObject:
   - component: {fileID: 124234429}
   - component: {fileID: 124234431}
   m_Layer: 5
-  m_Name: LeveWin
+  m_Name: LevelWin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -537,6 +537,7 @@ MonoBehaviour:
   spawner: {fileID: 139163528}
   animator: {fileID: 519420034}
   NextLevelScene: Level02
+  LevelWonUi: {fileID: 124234427}
 --- !u!95 &519420034
 Animator:
   serializedVersion: 4
@@ -991,6 +992,7 @@ MonoBehaviour:
   text: {fileID: 991271115}
   hightScoreText: {fileID: 1254232835}
   audiocontroller: {fileID: 48983005}
+  MaxScoreToCompleteLevel: 11
 --- !u!1 &1020836982
 GameObject:
   m_ObjectHideFlags: 0
@@ -1353,6 +1355,7 @@ GameObject:
   - component: {fileID: 1533134552}
   - component: {fileID: 1533134551}
   - component: {fileID: 1533134553}
+  - component: {fileID: 1533134554}
   m_Layer: 5
   m_Name: Score
   m_TagString: Untagged
@@ -1489,6 +1492,19 @@ CanvasGroup:
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
+--- !u!114 &1533134554
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1533134549}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 686501d32e184144da93ab5462f5b73a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  roundsText: {fileID: 1533134551}
 --- !u!1 &2101719329
 GameObject:
   m_ObjectHideFlags: 0
@@ -1631,14 +1647,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 48983000, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
-      propertyPath: m_Volume
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 48983001, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
-      propertyPath: m_Volume
-      value: 0.35
-      objectReference: {fileID: 0}
     - target: {fileID: 8858907079389136832, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
       propertyPath: m_Name
       value: AudioController
@@ -1649,15 +1657,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8858907079389136833, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.3494194
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858907079389136833, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -0.59823596
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858907079389136833, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.015738973
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8858907079389136833, guid: 8ca811d3e4ceb8b43b73fd6ec923934d, type: 3}
       propertyPath: m_LocalRotation.w

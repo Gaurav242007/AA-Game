@@ -36,19 +36,22 @@ public class Score : MonoBehaviour
 
     public static void IncreasePinCount()
     {
-        if (PinCount > 0 && PinCount / 5 == 0)
+        PinCount += ScoreBooster;
+        AudioController.PlayHitSfx();
+
+        if (PinCount >= ScoreToCompleteLevel)
+        {
+            GameManager.hasLevelCompleted = true;
+            return;
+        }
+
+        if (PinCount > 0 && PinCount % 5 == 0)
         {
             ScoreBooster++;
             AudioController.PlayScoreBooster();
         }
-        else if (PinCount >= ScoreToCompleteLevel)
-        {
-            GameManager.hasLevelCompleted = true;
-        }
-        PinCount += ScoreBooster;
-        AudioController.PlayHitSfx();
 
-        if (Score.PinCount > HightScore)
+        if (PinCount > HightScore)
         {
             UpdateHighscore();
         }
@@ -56,7 +59,6 @@ public class Score : MonoBehaviour
 
     public static void UpdateHighscore()
     {
-        Debug.Log("Updated HighScore");
         PlayerPrefs.SetInt("highScore", Score.PinCount);
         HightScore = PlayerPrefs.GetInt("highScore", PinCount);
     }
