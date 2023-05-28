@@ -152,7 +152,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &124234428
 RectTransform:
   m_ObjectHideFlags: 0
@@ -345,7 +345,7 @@ GameObject:
   - component: {fileID: 323655305}
   - component: {fileID: 323655304}
   m_Layer: 5
-  m_Name: Canas
+  m_Name: Canavs
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -992,7 +992,7 @@ MonoBehaviour:
   text: {fileID: 991271115}
   hightScoreText: {fileID: 1254232835}
   audiocontroller: {fileID: 48983005}
-  MaxScoreToCompleteLevel: 11
+  MaxScoreToCompleteLevel: 25
 --- !u!1 &1020836982
 GameObject:
   m_ObjectHideFlags: 0
