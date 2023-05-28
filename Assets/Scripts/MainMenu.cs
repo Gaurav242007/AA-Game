@@ -13,7 +13,6 @@ public class MainMenu : MonoBehaviour
 
     public void QuitApplication()
     {
-        FindObjectOfType<AudioController>().GetComponent<AudioController>().PlaySelectUi();
         Application.Quit();
     }
 }

@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     public Spawner spawner;
     public Animator animator;
     public string NextLevelScene;
+    public int levelToUnlock;
     public GameObject LevelWonUi;
 
     void Start()
@@ -48,6 +49,7 @@ public class GameManager : MonoBehaviour
     {
         rotator.enabled = false;
         spawner.enabled = false;
+        PlayerPrefs.SetInt("levelReached", levelToUnlock);
         FindObjectOfType<AudioController>().GetComponent<AudioController>().StopBgMusic();
         FindObjectOfType<AudioController>().GetComponent<AudioController>().PlayWinSfx();
         animator.SetTrigger("LevelWin");
